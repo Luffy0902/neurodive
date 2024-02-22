@@ -1,0 +1,15 @@
+{% extends 'main_layout.html' %}
+
+{% block content %}
+<div class="container-fluid resources " style="padding: 7%; ">
+    <a href="{{ url_for('urgenthelp') }}"><button class="btn my-2 my-sm-0 Urgenthelpbtn" type="button">Urgent Help</button></a>
+    <h1>About Us</h1>
+    <p>Neurodive is a website that aims to increase communication between neurodivergent people. In a world designed for neurotypical people, it is important to have a space where neurodivergent people can talk to each other and support each other. On Neurodive, you will find:</p>
+    <ul>
+        <li> A community page, where you can make posts about any topic you like. People can comment under the posts as well!</li>
+        <li>A Sensory Calming Activities page, under the resources tab. You can find many ways to overcome sensory overload here.</li>
+        <li> An urgent help page, which tells you what to do in case of an emergency.</li>
+    </ul>
+    <p><b>Happy Exploring!</b></p>
+</div>
+{% endblock %}

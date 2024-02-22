@@ -1,0 +1,44 @@
+{% extends 'main_layout.html' %}
+
+{% block content %}
+<div class="container" style="padding: 10% 5%;">
+    <div class="card ">
+        <div class="card-body">
+            <h4>{{ post.title }}</h4>
+            <hr>
+            <p>{{ post.content }}</p>
+            <p>{{ post.user.username }} <span class="pading:5px">|</span>
+                <a href="#" style=" color: #000;">
+                    <i class="far fa-comment"></i> 
+                </a>
+                {% set comment_count = post.comments | length %}
+                {% if comment_count %}
+                <span>{{ comment_count }}</span>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    <h5 class="mt-4">Add a Comment</h5>
+    <form method="POST" action="{{ url_for('view_and_add_comments', post_id=post.id) }}">
+        {{ comment_form.hidden_tag() }}
+        <div class="form-group">
+            {{ comment_form.content(class="form-control", rows=3) }}
+        </div>
+        <div class="form-group">
+            {{ comment_form.submit(class="btn postbutton") }}
+        </div>
+    </form>
+
+    <h3 class="mt-4">Comments</h3>
+    {% for comment in comments %}
+    <div class="card ">
+        <div class="card-body" >
+            <p class="card-text">{{ comment.content }}</p>
+            <hr>
+            <p class="card-text">{{ comment.user.username }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    {% if 'user' in session %} {# Add any additional content for users in session here #} {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'main_layout.html' %} {% block content %}
+<section class=" main_Content">
+    <section >
+        <div class="container">
+            <p class="toppara">Diversity brings us together. Helping embrace neurodiversity, one step at a time.</p>
+            <a href="{{ url_for('urgenthelp') }}"><button class="btn my-2 my-sm-0 Urgenthelpbtn" type="button">Urgent Help</button>
+            </a>
+            <div class="row">
+                <div class="col-sm first_block">
+                    <div>
+                        <h1>Relax.</h1>
+                        <h1>Breathe.</h1>
+                        <p>You‘ve come to the right place. <br> Scroll down to learn more. </p>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <img src="static/img/breathe_animation.gif" alt="" width="500" height="500">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mid_section">
+        <div class="container">
+            <div>
+                <h1>A place for neurodivergent individuals.</h1>
+                <p>Communication is key. </p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="static/img/icon1.png" alt="Arrows connecting 3 people" width="150" height="150">
+                    <p class="iconText">Interact with neurodivergent people</p>
+                </div>
+                <div class="col">
+                    <img src="static/img/icon2.png" alt="2 people solving a puzzle together" width="150" height="150">
+                    <p class="iconText">Problem solve with the community and resources</p>
+                </div>
+                <div class="col">
+                    <img src="static/img/icon3.png" alt="Half a heart, half a brain" width="150" height="150">
+                    <p class="iconText">Learn about yourself and better your mental health</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+{% endblock %}

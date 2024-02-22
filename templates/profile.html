@@ -1,0 +1,24 @@
+{% extends 'main_layout.html' %}
+
+{% block content %}
+<div class="container " style="margin-top: 5%;">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card mt-5">
+        <div class="card-header">
+          <h1 class="card-title">Profile</h1>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Welcome, {{ user.username }}!</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Email:</strong> {{ user.email }}</li>
+            <li class="list-group-item"><strong>Name:</strong> {{ user.name }}</li>
+            <li class="list-group-item"><strong>Date of Birth:</strong> {{ user.dob }}</li>
+          </ul>
+          <a href="{{ url_for('edit_profile') }}" class="btn btn-primary mt-3">Edit Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
